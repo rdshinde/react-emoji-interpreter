@@ -1,6 +1,6 @@
 import "./styles.css";
 import React, { useState } from "react";
-
+// our emoji database
 var emojiDictionary = {
   "🚣‍♂️": "Person Rowing Boat",
   "🗾": "Map of Japan",
@@ -11,8 +11,14 @@ var emojiDictionary = {
   "🏝": "Desert Island"
 };
 export default function App() {
-  const [meaning, setMeaning] = useState("");
+  // if user clicks on emoji in our database
+  function listIteamClickHandler(item) {
+    var meaning = emojiDictionary[item];
+    setMeaning(meaning);
+  }
 
+  const [meaning, setMeaning] = useState("");
+  // for emojis that we get from user input
   function emojiInputHandler(event) {
     var userInput = event.target.value;
     var meaning = emojiDictionary[userInput];
@@ -24,11 +30,23 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>inside outt!</h1>
-      <input onChange={emojiInputHandler}></input>
-      <div>{meaning}</div>
+      <h1>Emoji Interpreter</h1>
+      <input
+        placeholder="Enter your emoji here"
+        onChange={emojiInputHandler}
+      ></input>
+      <div>
+        <h2>{meaning}</h2>
+      </div>
+      <div>
+        <h3>Emojis in our database.</h3>
+      </div>
       {Object.keys(emojiDictionary).map((item) => {
-        return item;
+        return (
+          <span onClick={() => listIteamClickHandler(item)} key={item}>
+            &nbsp; {item}{" "}
+          </span>
+        );
       })}
     </div>
   );
