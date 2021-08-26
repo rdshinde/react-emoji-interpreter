@@ -2,13 +2,15 @@ import "./styles.css";
 import React, { useState } from "react";
 // our emoji database
 var emojiDictionary = {
-  "🚣‍♂️": "Person Rowing Boat",
-  "🗾": "Map of Japan",
-  "🏔": "Snow-Capped Mountain",
-  "🌋": "Volcano",
-  "🏕": "Camping",
-  "🏖": "Beach with Umbrella",
-  "🏝": "Desert Island"
+  "🤲": "Dua",
+  "👐": " Open Hands (Hug)",
+  "🙌": "Praise",
+  "👏": "Clapping",
+  "🤝": "Handshake",
+  "🤟": "Love You",
+  "✌️": "Victory",
+  "🤞": "Good Luck",
+  "🙏🏻": "Namaste"
 };
 export default function App() {
   // if user clicks on emoji in our database
@@ -30,16 +32,16 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Emoji Interpreter</h1>
+      <h1>Hand Gestures</h1>
       <input
-        placeholder="Enter your emoji here"
+        placeholder="Enter your gesture here"
         onChange={emojiInputHandler}
       ></input>
       <div>
         <h2>{meaning}</h2>
       </div>
       <div>
-        <h3>Emojis in our database.</h3>
+        <h3>Gestures in our database.</h3>
       </div>
       {Object.keys(emojiDictionary).map((item) => {
         return (
