@@ -10,6 +10,7 @@ var emojiDictionary = {
   "🤟": "Love You",
   "✌️": "Victory",
   "🤞": "Good Luck",
+  "👋": "Hello",
   "🙏🏻": "Namaste"
 };
 export default function App() {
