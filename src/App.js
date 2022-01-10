@@ -15,14 +15,14 @@ var emojiDictionary = {
 };
 export default function App() {
   // if user clicks on emoji in our database
-  function listIteamClickHandler(item) {
+  const listIteamClickHandler= item => {
     var meaning = emojiDictionary[item];
     setMeaning(meaning);
   }
 
   const [meaning, setMeaning] = useState("");
   // for emojis that we get from user input
-  function emojiInputHandler(event) {
+  const emojiInputHandler = event => {
     var userInput = event.target.value;
     var meaning = emojiDictionary[userInput];
     if (meaning === undefined) {
